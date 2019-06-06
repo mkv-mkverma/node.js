@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="UTF-8" />
+    <title>CHAT APP | Join a Room</title>
+    <meta name="description" content="Chat App by using node.js" />
+    <meta name="keywords" content="chatapp, node, socket" />
+    <meta name="author" content="Manish Kumar Verma" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="../favicon.ico" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="./css/styles.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+  </head>
+
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-12 text-center" style="padding-top: 200px;">
+          <h1>Welcome to chat App</h1>
+          <button
+            onclick="document.getElementById('id01').style.display='block'"
+            style="width:auto;"
+          >
+            Join Room
+          </button>
+        </div>
+      </div>
+
+      <div id="id01" class="modal">
+        <form class="modal-content animate" action="/chat.html">
+          <div class="imgcontainer">
+            <span
+              onclick="document.getElementById('id01').style.display='none'"
+              class="close"
+              title="Close Modal"
+              >&times;</span
+            >
+            <h2>Join a chat</h2>
+          </div>
+
+          <div class="container">
+            <label for="uname"><b>Display name</b></label>
+            <input
+              type="text"
+              placeholder="Enter your name to be displayed"
+              name="displayname"
+              required
+              autofocus
+            />
+
+            <label for="psw"><b>Room name</b></label>
+            <input
+              type="text"
+              placeholder="Enter room name"
+              name="roomname"
+              required
+            />
+
+            <button type="submit">Join</button>
+          </div>
+
+          <div class="container" style="background-color:#f1f1f1">
+            <button
+              type="button"
+              onclick="document.getElementById('id01').style.display='none'"
+              class="cancelbtn"
+            >
+              Cancel
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </body>
+
+</html>

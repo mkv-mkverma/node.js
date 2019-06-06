@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+
+<html>
+
+  <head>
+    <title>CHAT APP | chat</title>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Chat App by using node.js" />
+    <meta name="keywords" content="chatapp, node, socket" />
+    <meta name="author" content="Manish Kumar Verma" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="../favicon.ico" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="./css/styles.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+  </head>
+
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-8">
+          <h1>Welcome to chat App</h1>
+          <ol class="list-group" id="messageDisplay"></ol>
+        </div>
+        <div class="col-md-4">
+          <h1>Online User</h1>
+          <ol class="list-group" id="userDisplay"></ol>
+        </div>
+      </div>
+
+      <nav
+        class="navbar navbar-light navbar-expand-md bg-dark justify-content-between fixed-bottom"
+      >
+        <form class="w-100" id="message-form">
+          <div class="form-row">
+            <div class="col-md-8 col-sm-12 col-xs-12">
+              <!-- <textarea class="form-control" rows="1" id="message" name="message" placeholder="Enter your message..."></textarea> -->
+              <input
+                type="text"
+                class="form-control"
+                id="message"
+                placeholder="Enter message"
+                name="message"
+                autofocus
+                autocomplete="off"
+                required
+              />
+            </div>
+            <div class="col">
+              <button type="submit" class="btn btn-primary btn-block">
+                Send
+              </button>
+            </div>
+            <div class="col">
+              <button
+                type="button"
+                class="btn btn-primary btn-block"
+                id="send-location"
+              >
+                Send location
+              </button>
+            </div>
+          </div>
+        </form>
+      </nav>
+
+    </div>
+
+    <script id="message-template" type="text/template">
+      <li class="list-group-item">
+        <div>
+          <h6>{{from}}
+              <small class="text-muted"><i>{{createdAt}}</i></small>
+          </h6>
+        </div>
+        <div>
+            <p>{{text}}</p>
+        </div>
+      </li>
+    </script>
+
+    <script id="location-message-template" type="text/template">
+      <li class="list-group-item">
+        <div>
+        <h6>{{from}}
+            <small class="text-muted"><i>{{createdAt}}</i></small>
+          </h6>
+        </div>
+        <div>
+            <p><a href="{{url}}" target="_blank">My current location</a></p>
+        </div>
+      </li>
+    </script>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="./js/libs/moment.js"></script>
+    <script src="./js/libs/mustache.js"></script>
+    <script src="./js/libs/deparam.js"></script>
+    <script src="/js/chat.js"></script>
+  </body>
+
+</html>
