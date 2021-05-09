@@ -10,7 +10,7 @@
   "author": "Manish Verma",
   "license": "ISC",
   "devDependencies": {
-    "lodash": "^4.17.11",
+    "lodash": "^4.17.21",
     "yargs": "^4.7.1"
   }
 }
